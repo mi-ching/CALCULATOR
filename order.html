@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Order Form</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+
+<body>
+
+<form id="orderForm">
+
+    Name: <br>
+    <input type="text" id="name"><br><br>
+
+    Item:<br>
+    <select id="item">
+        <option value="">Select Item</option>
+        <option value="Short">short</option>
+        <option value="Blouse">blouse</option>
+        <option value="Bag">Bag</option>
+        <option value="Shoes">shoes</option>
+        <option value="Cap">cap</option>
+    </select><br><br>
+
+    Quantity: <br>
+    <input type="number" id="qty"><br><br>
+
+    <button type="button" onclick="validateOrder()"> Submit item </button>
+
+</form>
+
+<script>
+function validateOrder() {
+    let name = document.getElementById("name").value;
+    let item = document.getElementById("item").value;
+    let qty = document.getElementById("qty").value;
+
+    
+    if (name === "" || item === "" || qty === "") {
+        alert("Please select an order!");
+        return;
+    }
+
+    if (qty <= 0) {
+        alert("order atleast 1.");
+        return;
+    }
+
+
+    alert("Order Successful!\nName: " + name + "\nitem: " + item + "\nQuantity: " + qty);
+}
+</script>
+
+</body>
+</html>
